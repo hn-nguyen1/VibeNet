@@ -21,13 +21,11 @@ VibeNet models core social-media functionality through three primary classes:
 - Date-range post searching
 - User post retrieval
 - File-based loading of users, posts, and comments
-- Interactive command-line functionality when integrated with the application interface
 
 ## Technical Concepts
 
 - Python
 - Object-Oriented Programming
-- Classes and objects
 - Dictionaries
 - Lists
 - File I/O
@@ -45,19 +43,13 @@ VibeNet/
     └── vibenet.py
 ```
 
-## Running the Project
+## Code
 
-This repository contains the core VibeNet classes from the original project.
-
-```bash
-python src/vibenet.py
-```
-
-The class module is intended to be integrated with the project's application/interface code and data files.
+The repository currently contains the core VibeNet classes from the original project. The module is designed to be used by the project's application/interface layer together with its user, post, and comment data files.
 
 ## Limitations
 
-This version is an educational project and is not intended for production deployment. In particular, authentication/security features would require additional work such as secure password hashing, stronger validation, and more comprehensive error handling.
+This version is an educational project and is not intended for production deployment. Authentication/security would require additional work such as secure password hashing, stronger validation, and more comprehensive error handling.
 
 ## Future Improvements
 
