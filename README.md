@@ -1,14 +1,16 @@
 # VibeNet — Social Media Platform
 
-A Python-based social media platform built with object-oriented design to manage users, posts, comments, and application data.
+A Python-based social media platform model built with object-oriented programming to manage users, posts, comments, and application data.
 
 ## Overview
 
-VibeNet models core social-media functionality through three primary classes:
+The original project defines three core classes:
 
 - `User` — stores user identity, profile information, and posts
 - `Post` — represents posts, engagement, comments, authorship, and dates
 - `VibeNet` — manages users and posts and provides application-level operations
+
+The current repository preserves the original class implementation rather than inventing a new application entry point.
 
 ## Features
 
@@ -43,9 +45,9 @@ VibeNet/
     └── vibenet.py
 ```
 
-## Code
+## Current Implementation
 
-The repository currently contains the core VibeNet classes from the original project. The module is designed to be used by the project's application/interface layer together with its user, post, and comment data files.
+`src/vibenet.py` contains the original `Post`, `User`, and `VibeNet` classes. The source provided for this project does not include a separate command-line `main.py`, so the repository does not fabricate one.
 
 ## Limitations
 
@@ -53,6 +55,7 @@ This version is an educational project and is not intended for production deploy
 
 ## Future Improvements
 
+- Add a dedicated application entry point using the original project interface, if available
 - Add automated unit tests
 - Replace plaintext password handling with secure password hashing
 - Improve input and file validation
