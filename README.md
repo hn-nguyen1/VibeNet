@@ -1,39 +1,41 @@
 # VibeNet — Social Media Platform
 
-A Python-based social media platform model built with object-oriented programming to manage users, posts, comments, and application data.
+A Python-based social media platform built with object-oriented design to manage users, posts, comments, and application data.
 
 ## Overview
 
-The original project defines three core classes:
+VibeNet separates the application's data model from its command-line interface:
 
-- `User` — stores user identity, profile information, and posts
-- `Post` — represents posts, engagement, comments, authorship, and dates
-- `VibeNet` — manages users and posts and provides application-level operations
-
-The current repository preserves the original class implementation rather than inventing a new application entry point.
+- `vibenet.py` — defines the `Post`, `User`, and `VibeNet` classes and application data operations
+- `main.py` — provides authentication, menus, post interaction, searching, and the program entry point
 
 ## Features
 
 - Object-oriented application structure
+- User login and account creation
+- Password requirement validation
 - User and post management
-- Post creation and content editing
+- Post creation, editing, and deletion
 - Ownership checks for post modification
-- Likes and comment tracking
+- Likes and comments
 - Engagement-score calculation
+- Hashtag search
+- Engagement- and date-based newsfeed sorting
+- User sorting by follower/following counts
 - Date-range post searching
-- User post retrieval
 - File-based loading of users, posts, and comments
 
 ## Technical Concepts
 
 - Python
 - Object-Oriented Programming
-- Dictionaries
-- Lists
+- Dictionaries and lists
 - File I/O
 - Date/time processing
-- Data validation
-- Search and filtering
+- String processing
+- Sorting and filtering
+- Modular program design
+- Command-line interfaces
 
 ## Project Structure
 
@@ -42,22 +44,55 @@ VibeNet/
 ├── README.md
 ├── .gitignore
 └── src/
+    ├── main.py
     └── vibenet.py
 ```
 
-## Current Implementation
+## Architecture
 
-`src/vibenet.py` contains the original `Post`, `User`, and `VibeNet` classes. The source provided for this project does not include a separate command-line `main.py`, so the repository does not fabricate one.
+```text
+main.py
+   │
+   │ imports
+   ▼
+vibenet.py
+   ├── Post
+   ├── User
+   └── VibeNet
+```
 
-## Limitations
+The separation keeps the application's core classes and data operations independent from the command-line interface and user interaction logic.
 
-This version is an educational project and is not intended for production deployment. Authentication/security would require additional work such as secure password hashing, stronger validation, and more comprehensive error handling.
+## Running the Project
+
+The application currently expects the original project data files:
+
+```text
+users.txt
+posts.txt
+post_comments.txt
+```
+
+These files are intentionally not included in the repository until the project data can be reviewed and sanitized.
+
+From the project directory, run:
+
+```bash
+python src/main.py
+```
+
+If the data files are stored in a different location, the file paths in `main.py` should be updated accordingly.
+
+## Security Note
+
+This is an educational project. Passwords are currently stored and compared directly in memory/file data rather than using secure password hashing. The project should therefore not be presented as implementing production-grade authentication.
 
 ## Future Improvements
 
-- Add a dedicated application entry point using the original project interface, if available
 - Add automated unit tests
-- Replace plaintext password handling with secure password hashing
+- Implement secure password hashing
 - Improve input and file validation
-- Add database-backed persistence
+- Handle malformed data files gracefully
+- Replace flat-file persistence with a database
+- Separate additional services from the CLI layer
 - Expand the application into a web/API service
